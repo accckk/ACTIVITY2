@@ -1,0 +1,58 @@
+package com.candyvendingmachine;
+import java.util.Scanner;
+
+public class ACTIVITY2 {
+
+  static Scanner scan = new Scanner(System.in);
+  
+  public static double displayMenu(){
+
+    double price = 0;
+    System.out.println("Here's what I have:");
+    System.out.println("A.   25.00    dairymilk");
+    System.out.println("B.   75.00   ferrero");
+    System.out.println("C.   50.00    tobleron");
+    
+    System.out.println();
+    System.out.println("Which candy would you like to purchase(letter only)?: ");
+    
+    String choice = scan.next().toUpperCase();
+    
+    if (choice.equals("A")){
+      System.out.println("You have selected dairymilk");
+      System.out.print("Price: ");
+      price = 25.00;
+      return price;
+    }
+    else if (choice.equals("B")){
+      System.out.println("You have selected Ferrero");
+      System.out.print("Price: ");
+      price = 75.00;
+      return price;
+    }
+    else if (choice.equals("C")){
+      System.out.println("You have selected Tobleron");
+      System.out.print("Price: ");
+      price = 50.00;
+      return price;
+    }
+    else {
+      return price;
+    }
+  }
+  
+  public static void dispense(double money, double candyPrice){
+       
+    if (money > candyPrice){
+      System.out.println("Here''s your candy. Enjoy!");
+      double change = money - candyPrice;
+      System.out.println("Here's "+change+" in change");
+    }
+    else if (money == candyPrice){
+      System.out.println("Here's your candy. Enjoy!");
+    }
+    else {
+      System.out.println("You don't have enough money to purchase the item");
+    }
+   
+  }
